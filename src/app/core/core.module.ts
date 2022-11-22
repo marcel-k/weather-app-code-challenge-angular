@@ -1,7 +1,10 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 @NgModule({
-  declarations: [],
+  declarations: [
+    ToolbarComponent
+  ],
   imports: [
     CommonModule
   ]
