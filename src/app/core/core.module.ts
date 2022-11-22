@@ -2,10 +2,12 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { NavigationComponent } from './layout/navigation/navigation.component';
+import { ContentComponent } from './layout/content/content.component';
 @NgModule({
   declarations: [
     ToolbarComponent,
-    NavigationComponent
+    NavigationComponent,
+    ContentComponent
   ],
   imports: [
     CommonModule
