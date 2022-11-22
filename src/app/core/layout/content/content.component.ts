@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-content',
+  selector: 'wa-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
