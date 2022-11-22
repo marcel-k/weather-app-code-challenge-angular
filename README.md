@@ -1,6 +1,6 @@
 onderdelen te bouwen:
 
-- angular updaten naar 15
+- x angular updaten naar 15
 - layout: main, menu, header, footer, user/tools, modal
 - menu navigatie met de router (en ngrx?)
 - global state (selected city en darktheme)
@@ -11,7 +11,8 @@ onderdelen te bouwen:
 - unit tests / end-to-end
 - build neerzetten op github pages
 - nog meer functionaliteiten? 
-- min en max temperaturen goed
+- voor de forecast swipeable cards ipv een slider met dagen 
+- min en max temperaturen verbeteren
 - gebruik de cli waar dat kan
 - models ipv interfaces
 - eerst met modules, daarna omzetten naar stand-alone components en stand-alone components lazy loaden
