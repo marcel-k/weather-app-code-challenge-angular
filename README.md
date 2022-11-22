@@ -1,7 +1,8 @@
-onderdelen te bouwen:
+onderdelen te bouwen in de angular versie:
 
 - x angular updaten naar 15
-- layout: main, menu, header, footer, user/tools, modal
+- layout: main, menu, header, footer, toolbar
+- modal en reactive form elements
 - menu navigatie met de router (en ngrx?)
 - global state (selected city en darktheme)
 - services voor calls naar api
