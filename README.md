@@ -1,3 +1,25 @@
+onderdelen te bouwen:
+
+- angular updaten naar 15
+- layout: main, menu, header, footer, user/tools, modal
+- menu navigatie met de router (en ngrx?)
+- global state (selected city en darktheme)
+- services voor calls naar api
+- d3 grafiek
+- material ui voornamelijk, sommige dingen custom? goed kijken wanneer custom nodig is
+- (material) animatie
+- unit tests / end-to-end
+- build neerzetten op github pages
+- nog meer functionaliteiten? 
+- min en max temperaturen goed
+- gebruik de cli waar dat kan
+- models ipv interfaces
+- eerst met modules, daarna omzetten naar stand-alone components en stand-alone components lazy loaden
+- esbuild gebruiken
+- Angular CDK onderzoeken
+
+
+
 # WeatherAppAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
