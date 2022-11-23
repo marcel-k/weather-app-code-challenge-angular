@@ -1,3 +1,8 @@
 mat-sidenav {
     width: 200px;
   }
+
+mat-sidenav-content {
+  /* full screen height - 64px toolbar - 24px footer */
+  min-height: calc(100vh - 64px - 24px);
+}
