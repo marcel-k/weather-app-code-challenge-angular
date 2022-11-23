@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'wa-toolbar',
@@ -7,5 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class ToolbarComponent {
   @Input() location: string = 'Bedum, NL';
+  @Output() onToggleSidenav: EventEmitter<void> = new EventEmitter();
 
+  constructor() {
+
+  }
+
+  onMenuButtonClick() {
+    this.onToggleSidenav.emit();
+  }
 }

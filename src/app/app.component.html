@@ -1,5 +1,5 @@
-<wa-toolbar></wa-toolbar>
-<wa-container>
+<wa-toolbar (onToggleSidenav)="container.toggleSideNav()"></wa-toolbar>
+<wa-container #container>
     <wa-navigation></wa-navigation>
     <wa-content>
         <router-outlet></router-outlet>

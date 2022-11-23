@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'wa-container',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
+  
+  @ViewChild('sidenav') sideNav!: MatSidenav;
+  constructor() {
+  
+  }
 
+  toggleSideNav() {
+    this.sideNav.toggle();
+  }
 }
