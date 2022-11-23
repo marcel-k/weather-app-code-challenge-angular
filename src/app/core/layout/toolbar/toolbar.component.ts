@@ -7,13 +7,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ToolbarComponent {
   @Input() location: string = 'Bedum, NL';
-  @Output() onToggleSidenav: EventEmitter<void> = new EventEmitter();
+  @Output() openSidenav: EventEmitter<void> = new EventEmitter();
 
   constructor() {
 
   }
 
   onMenuOpenClick() {
-    this.onToggleSidenav.emit();
+    this.openSidenav.emit();
   }
 }
