@@ -5,11 +5,13 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CardComponent } from './components/card/card.component';
 import { EditLocationFabComponent } from './edit-location-fab/edit-location-fab.component';
+import { ReplacePipe } from './pipes/replace.pipe';
 
 @NgModule({
   declarations: [
     CardComponent,
-    EditLocationFabComponent
+    EditLocationFabComponent,
+    ReplacePipe
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { EditLocationFabComponent } from './edit-location-fab/edit-location-fab.
     MatIconModule
   ],
   exports: [
-    EditLocationFabComponent
+    EditLocationFabComponent,
+    ReplacePipe
   ]
 })
 export class SharedModule { }
