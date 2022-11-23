@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { SharedModule } from '../shared/shared.module';
 
 import { ContainerComponent } from './layout/container/container.component';
 import { ContentComponent } from './layout/content/content.component';
@@ -24,7 +25,8 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    SharedModule
   ],
   exports: [
     ToolbarComponent,

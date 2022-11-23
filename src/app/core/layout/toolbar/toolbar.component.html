@@ -1,9 +1,9 @@
-<mat-toolbar color="primary" class="toolbar mat-elevation-z6" >
-    <button mat-icon-button aria-label="Open menu" (click)="onMenuOpenClick()">
+<mat-toolbar color="primary" class="toolbar mat-elevation-z6">
+    <button mat-icon-button (click)="onMenuOpenClick()" aria-label="Open menu">
         <mat-icon>menu</mat-icon>
     </button>
     <span class="title">{{location}}</span>
-    <button mat-icon-button aria-label="Switch to dark mode">
-        <mat-icon>dark_mode</mat-icon>
+    <button mat-icon-button (click)="onModeButtonClick()" attr.aria-label="Switch to {{inverseMode | replace:'_':''}}">
+        <mat-icon>{{inverseMode}}</mat-icon>
     </button>
 </mat-toolbar>
