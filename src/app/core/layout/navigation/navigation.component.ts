@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'wa-navigation',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
+  @Output() closeSidenav: EventEmitter<void> = new EventEmitter();
 
+  constructor(){}
+
+  onMenuCloseClick() {
+    this.closeSidenav.emit();
+  }
 }

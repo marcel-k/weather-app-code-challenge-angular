@@ -1,6 +1,6 @@
 <wa-toolbar (openSidenav)="container.toggleSideNav()"></wa-toolbar>
 <wa-container #container>
-    <wa-navigation></wa-navigation>
+    <wa-navigation (closeSidenav)="container.toggleSideNav()"></wa-navigation>
     <wa-content>
         <router-outlet></router-outlet>
     </wa-content>
