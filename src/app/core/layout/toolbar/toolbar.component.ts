@@ -13,7 +13,7 @@ export class ToolbarComponent {
 
   }
 
-  onMenuButtonClick() {
+  onMenuOpenClick() {
     this.onToggleSidenav.emit();
   }
 }
