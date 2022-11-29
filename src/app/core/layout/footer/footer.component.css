@@ -1,0 +1,15 @@
+footer {
+    /* TODO: use angular material theming in scss: https://material.angular.io/guide/theming#what-is-theming  */
+    display: flex;
+    color: white;
+    height: 1.5rem;
+    padding: 0 1rem;
+    align-items: center;
+    background-color: #673ab7;
+    justify-content: space-between;
+}
+
+.version {
+    margin-left: auto;
+    font-size: 0.75rem;
+}
