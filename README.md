@@ -17,8 +17,10 @@ onderdelen te bouwen in de angular versie:
 - gebruik de cli waar dat kan
 - models ipv interfaces
 - eerst met modules, daarna omzetten naar stand-alone components en stand-alone components lazy loaden
-- esbuild gebruiken
+- esbuild gebruiken (kan nog niet in dev)
 - Angular CDK onderzoeken
+- pop-up als je op version klikt
+
 
 
 
