@@ -1,8 +1,45 @@
-.current-weather-card {
-    height: 500px;
+.mat-mdc-card {
+    height: 100%;
     min-width: 200px;
     
     /* TODO: angular material theme */
     color: #ffffff;
-    background: url("/assets/images/current-weather-background.svg") center bottom repeat-x, #673ab7;
+    background: url("/assets/images/current-weather-background.svg") center bottom -24px repeat-x, #673ab7;
+}
+
+.mat-mdc-card-content {
+    height: 100%;
+}
+
+.container {
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#degrees {
+    font-size:6rem;
+    line-height: normal;
+}
+
+#weather-description {
+    font-weight: 400;
+}
+
+#humidity {
+    opacity: 0.5;
+    font-size: 1.5rem;
+    line-height: normal;
+}
+
+h1,h2,h3 {
+    margin-bottom: 0;
 }
