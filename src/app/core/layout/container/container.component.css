@@ -1,15 +1,15 @@
-mat-sidenav {
+.mat-sidenav {
   width: 200px;
 }
 
-mat-sidenav-content {
+.mat-sidenav-content {
   /* full screen height - 64px toolbar - 24px footer */
   min-height: calc(100vh - 64px - 24px);
 }
 
 /* https://github.com/angular/flex-layout/wiki/Responsive-API */
 @media only screen and (max-width:599px) {
-  mat-sidenav-content {
+  .mat-sidenav-content {
     /* full screen height - 56px toolbar - 24px footer */
     min-height: calc(100vh - 56px - 24px);
   }
