@@ -1,0 +1,8 @@
+.current-weather-card {
+    height: 500px;
+    min-width: 200px;
+    
+    /* TODO: angular material theme */
+    color: #ffffff;
+    background: url("/assets/images/current-weather-background.svg") center bottom repeat-x, #673ab7;
+}

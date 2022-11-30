@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 import { SharedModule } from '../shared/shared.module';
 import { CurrentWeatherCardComponent } from './current-weather-card/current-weather-card.component';
@@ -21,7 +22,8 @@ import { WeatherComponent } from './weather.component';
   imports: [
     CommonModule,
     SharedModule,
-    WeatherRoutingModule
+    WeatherRoutingModule,
+    MatCardModule
   ]
 })
 export class WeatherModule { }
