@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { CardComponent } from './components/card/card.component';
 import { EditLocationFabComponent } from './edit-location-fab/edit-location-fab.component';
 import { ReplacePipe } from './pipes/replace.pipe';
@@ -11,7 +12,8 @@ import { ReplacePipe } from './pipes/replace.pipe';
   declarations: [
     CardComponent,
     EditLocationFabComponent,
-    ReplacePipe
+    ReplacePipe,
+    BarChartComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { ReplacePipe } from './pipes/replace.pipe';
   ],
   exports: [
     EditLocationFabComponent,
-    ReplacePipe
+    ReplacePipe,
+    BarChartComponent
   ]
 })
 export class SharedModule { }
