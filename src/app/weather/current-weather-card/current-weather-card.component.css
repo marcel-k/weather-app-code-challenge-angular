@@ -4,7 +4,13 @@
     
     /* TODO: angular material theme */
     color: #ffffff;
-    background: url("/assets/images/current-weather-background.svg") center bottom -24px repeat-x, #673ab7;
+    background: url("/assets/images/day.svg") right -0.75rem bottom -0.75rem no-repeat, #673ab7;
+}
+
+.mat-mdc-card::after {
+    content: "";
+    opacity: 0.05;
+    background: url("/assets/images/current-weather-background.svg") center bottom repeat-x;
 }
 
 .mat-mdc-card-content {
@@ -12,10 +18,10 @@
 }
 
 .container {
-    height: 240px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .flex-column {
