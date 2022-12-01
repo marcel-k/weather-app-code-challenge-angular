@@ -15,7 +15,7 @@ export class WeatherService {
 
   get selectedLocation() { return this._selectedLocation; }
   set selectedLocation(location: WeatherLocationModel) {
-    this.selectedLocation = location;
+    this._selectedLocation = location;
     
     this.getWeatherDataMock();
     // this.getWeatherData();
