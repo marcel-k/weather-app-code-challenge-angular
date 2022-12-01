@@ -9,7 +9,7 @@
 
 .mat-mdc-card::after {
     content: "";
-    opacity: 0.05;
+    opacity: 0.1;
     background: url("/assets/images/current-weather-background.svg") center bottom repeat-x;
 }
 
