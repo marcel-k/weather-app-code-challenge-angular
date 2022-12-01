@@ -11,6 +11,7 @@ import { ContentComponent } from './layout/content/content.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { NavigationComponent } from './layout/navigation/navigation.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   exports: [
     ToolbarComponent,
