@@ -1,0 +1,11 @@
+.mat-mdc-card {
+    height: 300px;;
+    min-width: 352px;
+
+    /* TODO: angular theme */
+    background: #3addb1;
+}
+
+.container {
+    height: 100%;
+}
