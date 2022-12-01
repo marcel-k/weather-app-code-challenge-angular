@@ -4,10 +4,6 @@
     flex-wrap: wrap;
 }
 
-.flex-row-1 {
-    height: 300px;
-}
-
 .flex-row + .flex-row {
     margin-top: 1rem;
 }
