@@ -26,7 +26,7 @@ export class WeatherResponse extends Deserializable {
         this.wind = new Wind().deserialize(input.wind);
         this.coord = new Coord().deserialize(input.coord);
         this.clouds = new Clouds().deserialize(input.clouds);
-        this.weather = input.weather?.forEach((w: any) => new Weather().deserialize(w));
+        this.weather = input.weather?.map((w: any) => new Weather().deserialize(w));
 
         return this;
     }
