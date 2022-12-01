@@ -1,6 +1,12 @@
+import { CountryCode } from './countrycode.type';
 import { Deserializable } from './deserializable.abstract';
 import { WeatherResponse } from './weather.response';
 
+export class WeatherLocationModel extends Deserializable {
+    cityName!: string;
+    countryCode!: CountryCode;
+  
+}
 export class WeatherModel extends Deserializable {
     date!: Date;
     main!: string;
