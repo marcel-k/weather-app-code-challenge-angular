@@ -1,17 +1,16 @@
 onderdelen te bouwen in de angular versie:
 
 - x angular updaten naar 15
-- layout: main, menu, header, footer, toolbar
+- x layout: main, menu, header, footer, toolbar
 - modal en reactive form elements
-- menu navigatie met de router (en ngrx?)
-- global state (selected city en darktheme)
+- menu navigatie met de router en async routes
+- selected city en darktheme opslaan in services?
 - services voor calls naar api
 - d3 grafiek
-- material ui voornamelijk, sommige dingen custom? goed kijken wanneer custom nodig is
+- material ui en theme light/dark
 - (material) animatie
 - unit tests / end-to-end
 - build neerzetten op github pages
-- nog meer functionaliteiten? 
 - voor de forecast swipeable cards ipv een slider met dagen 
 - min en max temperaturen verbeteren
 - gebruik de cli waar dat kan
@@ -20,6 +19,8 @@ onderdelen te bouwen in de angular versie:
 - esbuild gebruiken (kan nog niet in dev)
 - Angular CDK onderzoeken
 - pop-up als je op version klikt
+- background corner image van daycard aanpassen aan weer of tijd van dag
+- ngrx onderzoeken
 
 
 
