@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { WeatherModel } from 'src/app/core/weather.model';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { map, Subscription } from 'rxjs';
+import { WeatherLocationModel, WeatherModel } from 'src/app/core/weather.model';
+import { WeatherService } from 'src/app/core/weather.service';
 import { BarChartModel } from 'src/app/shared/components/bar-chart/bar-chart.model';
 
 @Component({
@@ -7,9 +9,27 @@ import { BarChartModel } from 'src/app/shared/components/bar-chart/bar-chart.mod
   templateUrl: './three-day-forecast-weather-card.component.html',
   styleUrls: ['./three-day-forecast-weather-card.component.css']
 })
-export class ThreeDayForecastWeatherCardComponent {
+export class ThreeDayForecastWeatherCardComponent implements OnInit, OnDestroy {
+  chartData!: BarChartModel;
+  weatherSub!: Subscription;
 
-   mapWeatherToBarChartModel(weatherModel: WeatherModel[]): BarChartModel {
+  constructor(private weatherService: WeatherService) {
+  
+  }
+ 
+  ngOnInit(): void {
+    this.weatherSub = this.weatherService.weatherForecast$
+      .pipe(map(this.mapWeatherToBarChartModel))
+      .subscribe((data) => {
+        this.chartData = data;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.weatherSub.unsubscribe();
+  }
+
+  mapWeatherToBarChartModel(weatherModel: WeatherModel[]): BarChartModel {
     const formattedData = weatherModel.reduce((previous, weatherItem) => {
       const { date, humidity, temperature } = weatherItem;
       const label = date.toISOString();
@@ -18,7 +38,7 @@ export class ThreeDayForecastWeatherCardComponent {
         temperature: [...previous.temperature, { label, value: temperature }]
       };
     }, { humidity: [], temperature: [] } as BarChartModel);
-  
+
     return formattedData;
   }
 }
