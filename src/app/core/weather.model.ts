@@ -3,9 +3,10 @@ import { Deserializable } from './deserializable.abstract';
 import { WeatherResponse } from './weather.response';
 
 export class WeatherLocationModel extends Deserializable {
-    cityName!: string;
-    countryCode!: CountryCode;
-  
+    
+    constructor(public cityName: string, public countryCode: CountryCode) {
+        super();
+    }
 }
 export class WeatherModel extends Deserializable {
     date!: Date;
