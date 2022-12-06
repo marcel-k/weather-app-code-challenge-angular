@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { map, Subscription } from 'rxjs';
 import { WeatherLocationModel, WeatherModel } from 'src/app/core/weather.model';
 import { WeatherService } from 'src/app/core/weather.service';
@@ -10,6 +10,8 @@ import { BarChartModel } from 'src/app/shared/components/bar-chart/bar-chart.mod
   styleUrls: ['./three-day-forecast-weather-card.component.css']
 })
 export class ThreeDayForecastWeatherCardComponent implements OnInit, OnDestroy {
+  @ViewChild('card', { static: true, read: ElementRef }) cardViewChild!: ElementRef<Element>;
+  
   chartData!: BarChartModel;
   weatherSub!: Subscription;
 

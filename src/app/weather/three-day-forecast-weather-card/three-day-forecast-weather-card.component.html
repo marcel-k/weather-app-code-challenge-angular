@@ -1,7 +1,5 @@
-<mat-card>
+<mat-card #card>
     <mat-card-content>
-        <div class="container">
-            <wa-bar-chart [model]="chartData"></wa-bar-chart>
-        </div>
+        <wa-bar-chart [measureElement]="cardViewChild" [model]="chartData"></wa-bar-chart>
     </mat-card-content>
 </mat-card>
