@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, ReplaySubject, shareReplay, switchMap } from 'rxjs';
 
+import { environment } from '../../environments/environment';
 import { WeatherLocationModel, WeatherModel } from './weather.model';
 import { WeatherResponse } from './weather.response';
 
@@ -37,14 +38,14 @@ export class WeatherService {
       {
         fromObject:
         {
-          appid: 'f5f602b5811d444692ab37bbeee62b23',
-          units: 'metric',
+          appid: environment.openWeatherMapAppId,
+          units: environment.openWeatherMapUnits,
           q: `${this.selectedLocation.cityName},${this.selectedLocation.countryCode}`,
         }
       }
     );
 
-    return this.http.get('https://api.openweathermap.org/data/2.5/forecast', { params: httpParams })
+    return this.http.get(environment.openWeatherMapForecastUrl, { params: httpParams })
       .pipe(
         map((data: any) => { return data.list }),
         map((list) => this.mapJsonToResponse(list)),

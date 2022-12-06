@@ -24,6 +24,10 @@ onderdelen te bouwen in de angular versie:
 
 
 
+# Set-up
+To be able to make api calls to open weather map, Create an env.ts file in the root folder and export your own open weather map app-id:  `export const openWeatherMapAppId = '#APP_ID#';`
+
+
 
 # WeatherAppAngular
 
