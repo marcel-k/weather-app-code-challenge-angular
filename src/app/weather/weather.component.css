@@ -2,8 +2,7 @@
     gap: 1rem;
     display: grid;
     justify-content: center;
-
-    grid-template-rows: 300px;
+    
     grid-template-columns: 100%;
 }
 

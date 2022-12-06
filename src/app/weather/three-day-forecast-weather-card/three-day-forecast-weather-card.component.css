@@ -1,11 +1,12 @@
 .mat-mdc-card {
     width: 100%;
-    height: 100%;
+    height: 300px;
 
     /* TODO: angular theme */
     background: #3addb1;
 }
 
 .mat-mdc-card-content {
-    height: 100%;
+    /* Niet nodig? kan zelfs een infinite loop opleveren icm height: 100% op mat-mdc-card en een dynamische grid row height */
+    /* height: 100%; */
 }
