@@ -1,21 +1,24 @@
+.grid {
+    gap: 1rem;
+    display: grid;
+    justify-content: center;
+
+    grid-template-rows: 300px;
+    grid-template-columns: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    .grid {
+        grid-template-columns: minmax(200px, 400px) minmax(400px, 800px);
+    }
+}
+
 .flex-row {
     gap: 1rem;
     display: flex;
     flex-wrap: wrap;
 }
 
-.flex-row + .flex-row {
-    margin-top: 1rem;
-}
-
-.flex-grow-1 {
-    flex-grow: 1;
-}
-
-.flex-grow-2 {
-    flex-grow: 2;
-   
-}
 
 .edit-location-fab {
     right: 1rem;
