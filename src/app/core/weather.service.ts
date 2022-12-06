@@ -22,18 +22,22 @@ export class WeatherService {
   // When next is fired, getWeatherData is automatically called through the switchMap operator.
   // shareReplay(1) makes sure every call is done only once, even though multiple components are subscribed.
   private _weatherForecast = new ReplaySubject<void>();
-  public readonly weatherForecast$: Observable<WeatherModel[]> = this._weatherForecast.pipe(
-    switchMap(() => this.getWeatherForecast()),
+  public readonly fiveDayWeatherForecast$: Observable<WeatherModel[]> = this._weatherForecast.pipe(
+    switchMap(() => this.getFiveDayWeatherForecast()),
     shareReplay(1),
+  );
+  public readonly threeDayWeatherForecast$: Observable<WeatherModel[]> = this.fiveDayWeatherForecast$.pipe(
+    map((data) => data.slice(0, 24))
   );
 
   constructor(private http: HttpClient) { }
 
 /**
- * Get weather forecast data based on the selected location.
+ * Get the weather forecast data based on the selected location.
+ * The api returns a list of weather data for every three hours.
  * @private subscribe to weatherForecast$ instead to get forecast data.
  */
-  private getWeatherForecast() {
+  private getFiveDayWeatherForecast() {
     const httpParams = new HttpParams(
       {
         fromObject:
@@ -53,7 +57,6 @@ export class WeatherService {
         // catchError(this.handleError)
       )
   }
-
 
   private mapJsonToResponse(list: any[]): WeatherResponse[] {
     const response = list.map((item: any) => new WeatherResponse().deserialize(item));
