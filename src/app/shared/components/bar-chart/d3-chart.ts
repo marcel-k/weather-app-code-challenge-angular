@@ -1,11 +1,13 @@
 import 'd3-transition';
 
+import { Selection } from 'd3';
 import { max, min } from 'd3-array';
 import { axisLeft } from 'd3-axis';
 import { scaleBand, scaleLinear } from 'd3-scale';
 import { select } from 'd3-selection';
 import { curveNatural, line } from 'd3-shape';
-import { BarChartModel, BarChartDataItem } from './bar-chart.model';
+
+import { BarChartDataItem, BarChartModel } from './bar-chart.model';
 
 const margin = { left: 40, top: 10, right: 10, bottom: 40 };
 
@@ -18,9 +20,9 @@ const margin = { left: 40, top: 10, right: 10, bottom: 40 };
  * @param width
  * @param height
  */
-export function Chart(parentElementId: string, width: number, height: number) {
-  let svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any>;
-  let xAxis: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
+export function BarChart(parentElementId: string, width: number, height: number) {
+  let svg: Selection<SVGSVGElement, unknown, HTMLElement, any>;
+  let xAxis: Selection<SVGGElement, unknown, HTMLElement, any>;
   let yAxis: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
   let content: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
   let container: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
@@ -57,6 +59,55 @@ export function Chart(parentElementId: string, width: number, height: number) {
     // append it to the svg
     content = container.append('g')
       .attr('class', 'content');
+
+       //legend
+    const legend = content.append('g').attr('transform', `translate(0, ${contentHeight + 16})`);
+    const legendTemperature = legend.append('g').attr('transform', `translate(0, 4)`);
+    const legendHumidity = legend.append('g').attr('transform', `translate(124)`);
+
+    legendTemperature.append('line')
+      .attr('x1', 0)
+      .attr('x2', 16)
+      .attr('y1', 8)
+      .attr('y2', 8)
+      .attr('fill', 'none')
+      .attr('stroke', '#fff')
+      .attr('stroke-opacity', '1')
+      .attr('stroke-width', '0.5rem')
+      .attr('stroke-linecap', 'round')
+      .attr('id', 'legend-temperature');
+
+    legendTemperature.append('text')
+      .attr('y', 8)
+      .attr('x', 24)
+      .text('Temperature')
+      .attr('opacity', 0.5)
+      .attr('fill', '#fff')
+      .attr('font-size', '1rem')
+      .attr('font-weight', '700')
+      .attr('dominant-baseline', 'middle');
+
+    legendHumidity.append('line')
+      .attr('x1', 8)
+      .attr('x2', 8)
+      .attr('y1', 0)
+      .attr('y2', 16)
+      .attr('fill', 'none')
+      .attr('stroke', '#fff')
+      .attr('stroke-opacity', '0.5')
+      .attr('stroke-width', '0.5rem')
+      .attr('stroke-linecap', 'round')
+      .attr('id', 'legend-humidity');
+
+    legendHumidity.append('text')
+      .attr('y', 12)
+      .attr('x', 16)
+      .text('Humidity')
+      .attr('opacity', 0.5)
+      .attr('fill', '#fff')
+      .attr('font-size', '1rem')
+      .attr('font-weight', '700')
+      .attr('dominant-baseline', 'middle');
   }
 
   const update = function (data: BarChartModel, width: number, height: number) {
@@ -94,13 +145,13 @@ export function Chart(parentElementId: string, width: number, height: number) {
     // and bind our (new) data to the selection
     const rectSelection = content?.selectAll('rect').data(humidity);
 
-    
+
     // set the x, y, height, width and fill of each rect
     // and transition them to their correct height and y position
     // The first time this is done, no bars are present in the DOM so they will all be appended
     rectSelection
       .join((enter) =>
-      // define any missing rect elements (data.length) with enter and append them to the DOM
+        // define any missing rect elements (data.length) with enter and append them to the DOM
         enter.append('rect')
           .attr('height', 0)
           // .attr('rx', '0.75rem') // safari houd niet van rem
@@ -147,7 +198,7 @@ export function Chart(parentElementId: string, width: number, height: number) {
     const yDomainEnd = yScale.domain()[1];
     const yRange = yScale.range()[0] - yScale.range()[1];
     const yAxisGenerator = axisLeft(yScale)
-      .tickValues([yDomainStart, yScale.invert(yRange / 2),  yDomainEnd])
+      .tickValues([yDomainStart, yScale.invert(yRange / 2), yDomainEnd])
       .tickFormat((tick) => `${tick}°`);
 
     yAxis
@@ -162,59 +213,15 @@ export function Chart(parentElementId: string, width: number, height: number) {
       .attr('fill', '#fff')
       .attr('font-size', '1rem')
       .attr('font-weight', '700');
-
-    //legend
-    const legend = content.append('g').attr('transform', `translate(0, ${contentHeight + 16})`);
-    const legendTemperature = legend.append('g').attr('transform', `translate(0, 4)`);
-    const legendHumidity = legend.append('g').attr('transform', `translate(124)`);
-
-    legendTemperature.append('line')
-    .attr('x1', 0)
-    .attr('x2', 16)
-    .attr('y1', 8)
-    .attr('y2', 8)
-      .attr('fill', 'none')
-      .attr('stroke', '#fff')
-      .attr('stroke-opacity', '1')
-      .attr('stroke-width', '0.5rem')
-      .attr('stroke-linecap', 'round')
-      .attr('id', 'legend-temperature');
-
-    legendTemperature.append('text')
-    .attr('y', 8)
-    .attr('x', 24)
-    .text('Temperature')
-    .attr('opacity', 0.5)
-    .attr('fill', '#fff')
-    .attr('font-size', '1rem')
-    .attr('font-weight', '700')
-    .attr('dominant-baseline', 'middle');
-
-    legendHumidity.append('line')
-    .attr('x1', 8)
-    .attr('x2', 8)
-    .attr('y1', 0)
-    .attr('y2', 16)
-      .attr('fill', 'none')
-      .attr('stroke', '#fff')
-      .attr('stroke-opacity', '0.5')
-      .attr('stroke-width', '0.5rem')
-      .attr('stroke-linecap', 'round')
-      .attr('id', 'legend-humidity');
-
-    legendHumidity.append('text')
-    .attr('y', 12)
-    .attr('x', 16)
-    .text('Humidity')
-    .attr('opacity', 0.5)
-    .attr('fill', '#fff')
-    .attr('font-size', '1rem')
-    .attr('font-weight', '700')
-    .attr('dominant-baseline', 'middle');
   }
 
   return {
     initialize,
     update
-  };
+  } as BarChartInstance;
+}
+
+export interface BarChartInstance {
+  initialize: () => void;
+  update: (data: BarChartModel, width: number, height: number) => void;
 }
