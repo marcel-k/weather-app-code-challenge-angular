@@ -10,7 +10,7 @@ import { BarChartModel } from 'src/app/shared/components/bar-chart/bar-chart.mod
   styleUrls: ['./three-day-forecast-weather-card.component.css']
 })
 export class ThreeDayForecastWeatherCardComponent implements OnInit, OnDestroy {
-  @ViewChild('card', { static: true, read: ElementRef }) cardViewChild!: ElementRef<Element>;
+  @ViewChild('content', { static: true, read: ElementRef }) contentViewChild!: ElementRef<Element>;
   
   chartData!: BarChartModel;
   weatherSub!: Subscription;
@@ -20,7 +20,7 @@ export class ThreeDayForecastWeatherCardComponent implements OnInit, OnDestroy {
   }
  
   ngOnInit(): void {
-    this.weatherSub = this.weatherService.weatherForecast$
+    this.weatherSub = this.weatherService.threeDayWeatherForecast$
       .pipe(map(this.mapWeatherToBarChartModel))
       .subscribe((data) => {
         this.chartData = data;
