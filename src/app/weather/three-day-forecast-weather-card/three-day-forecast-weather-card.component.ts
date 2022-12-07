@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { map, Subscription } from 'rxjs';
-import { WeatherLocationModel, WeatherModel } from 'src/app/core/weather.model';
-import { WeatherService } from 'src/app/core/weather.service';
+import { WeatherLocationModel, WeatherModel } from 'src/app/core/services/weather/weather.model';
+import { WeatherService } from 'src/app/core/services/weather/weather.service';
 import { BarChartModel } from 'src/app/shared/components/bar-chart/bar-chart.model';
 
 @Component({

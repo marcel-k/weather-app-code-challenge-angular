@@ -1,5 +1,5 @@
-import { CountryCode } from './countrycode.type';
-import { Deserializable } from './deserializable.abstract';
+import { CountryCode } from '../../countrycode.type';
+import { Deserializable } from '../../deserializable.abstract';
 import { WeatherResponse } from './weather.response';
 
 export class WeatherLocationModel extends Deserializable {

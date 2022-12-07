@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, ReplaySubject, shareReplay, switchMap } from 'rxjs';
 
-import { environment } from '../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { WeatherLocationModel, WeatherModel } from './weather.model';
 import { WeatherResponse } from './weather.response';
 

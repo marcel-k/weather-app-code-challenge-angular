@@ -1,5 +1,5 @@
-import { CountryCode } from "./countrycode.type";
-import { Deserializable } from "./deserializable.abstract";
+import { CountryCode } from "../../countrycode.type";
+import { Deserializable } from "../../deserializable.abstract";
 
 export class WeatherResponse extends Deserializable {
     id!: number;
